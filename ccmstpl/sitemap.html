@@ -1,0 +1,174 @@
+{CCMS_DB_PRELOAD:all,sitemap}<!DOCTYPE html>
+
+<html id="no-fouc" dir="{CCMS_LIB:_default.php;FUNC:ccms_lng_dir}" lang="{CCMS_LIB:_default.php;FUNC:ccms_lng}" style="opacity: 0;">
+	<head>
+		<meta charset="utf-8">
+		<title dir="{CCMS_DB_DIR:sitemap,title}">{CCMS_DB:sitemap,title}</title>
+		<meta name="description" content="">
+		
+		{CCMS_TPL:header-head.html}
+		
+		<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['orgchart']}]}"></script>
+
+		<style type="text/css">
+			.google-visualization-orgchart-node {
+				border: none;
+				background: -webkit-gradient(linear, left top, left bottom, from(#F2F4CE), to(#E2E78C));
+			}
+			.sitemap-node-desc {
+				color: red;
+				font-style: italic;
+			}
+			.google-visualization-orgchart-table * {
+				padding: 5px;
+			}
+		</style>
+		
+		<script>var navActiveArray = ["lng-{CCMS_LIB:_default.php;FUNC:ccms_lng}"];</script>
+	</head>
+	<body class="index-bg-imgs">
+		<div class="hatch_pattern"></div>
+		<div class="backstretch"></div>
+		
+		{CCMS_TPL:header-body.html}
+		
+		<main>
+			<section>
+				<div class="container wow fadeInLeft">
+					<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//d3rifeizl63fms.cloudfront.net/ccmstpl/_img/sitemap.png" alt="Sitemap" class="b-lazy flo-left section-img" />
+					<h1 dir="{CCMS_DB_DIR:all,sitemap:1}">{CCMS_DB:all,sitemap}</h1>
+					<p dir="{CCMS_DB_DIR:sitemap,text-01:1}">{CCMS_DB:sitemap,text-01}</p>
+				</div>
+			</section>
+			
+			<div class="container fadeInRight wow">
+				<div class="col" id="chart_div"></div>
+			</div>
+			
+			<script type="text/javascript">
+				google.load("visualization", "1", {packages:["orgchart"]});
+				google.setOnLoadCallback(drawChart);
+				function drawChart() {
+					var data = new google.visualization.DataTable();
+					data.addColumn('string', 'Name');
+					data.addColumn('string', 'Manager');
+					data.addColumn('string', 'ToolTip');
+
+					data.addRows([
+						[{v:'homepage', f:'<h3><a href="//{CCMS_LIB:_default.php;FUNC:ccms_cfgDomain}">Modus Internet {CCMS_DB:all,homepage}</a></h3>'}, '', "{CCMS_DB:all,homepage}"],
+
+						
+						[{v:'welcome-about-us', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/#section-about-us" dir="{CCMS_DB_DIR:all,welcome-about-us}">#{CCMS_DB:all,welcome-about-us}</a></h3>'}, 'homepage', '#{CCMS_DB:all,welcome-about-us}'],
+						
+						[{v:'website-design', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/#section-design" dir="{CCMS_DB_DIR:all,website-design}">#{CCMS_DB:all,website-design}</a></h3>'}, 'welcome-about-us', '#{CCMS_DB:all,website-design}'],
+						
+						[{v:'website-development', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/#section-develop" dir="{CCMS_DB_DIR:all,website-development}">#{CCMS_DB:all,website-development}</a></h3>'}, 'website-design', '#{CCMS_DB:all,website-development}'],
+						
+						[{v:'website-hosting-deploy', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/#section-deploy" dir="{CCMS_DB_DIR:all,website-hosting-deploy}">#{CCMS_DB:all,website-hosting-deploy}</a></h3>'}, 'website-development', '#{CCMS_DB:all,website-hosting-deploy}'],
+						
+						[{v:'support', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/#section-support" dir="{CCMS_DB_DIR:all,support}">#{CCMS_DB:all,support}</a></h3>'}, 'website-hosting-deploy', '#{CCMS_DB:all,support}'],
+						
+						[{v:'news', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/#section-news" dir="{CCMS_DB_DIR:all,news}">#{CCMS_DB:all,news}</a></h3>'}, 'support', '#{CCMS_DB:all,news}'],
+						
+						[{v:'contact-us', f:'<h3><a href="#section-footer" dir="{CCMS_DB_DIR:all,contact-us}">#{CCMS_DB:all,contact-us}</a></h3>'}, 'news', '#{CCMS_DB:all,contact-us}'],
+						
+						
+						[{v:'credits', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/credits.html" dir="{CCMS_DB_DIR:all,credits}">{CCMS_DB:all,credits}</a></h3>'}, 'homepage', '{CCMS_DB:all,credits}'],
+
+						[{v:'privacy-policy', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/privacy-policy.html" dir="{CCMS_DB_DIR:all,privacy-policy}">{CCMS_DB:all,privacy-policy}</a></h3>'}, 'homepage', '{CCMS_DB:all,privacy-policy}'],
+
+						[{v:'sitemap', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/sitemap.html" dir="{CCMS_DB_DIR:all,sitemap}">{CCMS_DB:all,sitemap}</a></h3>'}, 'homepage', '{CCMS_DB:all,sitemap}'],
+
+						[{v:'search', f:'<h3><a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/search.html?search=" dir="{CCMS_DB_DIR:all,search}">{CCMS_DB:all,search}</a></h3>'}, 'homepage', '{CCMS_DB:all,search}']
+
+					]);
+
+					var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+					chart.draw(data, {allowHtml:true});
+				}
+			</script>
+		</main>
+		
+		{CCMS_TPL:footer.html}
+		
+		{CCMS_LIB:_default.php;FUNC:ccms_user_admin_slider}
+		<script>
+			function loadFirst(e,t){var a=document.createElement("script");a.async = true;a.readyState?a.onreadystatechange=function(){("loaded"==a.readyState||"complete"==a.readyState)&&(a.onreadystatechange=null,t())}:a.onload=function(){t()},a.src=e,document.body.appendChild(a);}
+			
+			var cb = function() {
+				var l = document.createElement("link");
+				l.rel = "stylesheet";
+				l.href = "//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css";
+				var h = document.getElementsByTagName("head")[0];
+				h.parentNode.insertBefore(l, h);
+				
+				var l = document.createElement("link");
+				l.rel = "stylesheet";
+				l.href = "//d3rifeizl63fms.cloudfront.net/ccmstpl/_css/main.min.css";
+				var h = document.getElementsByTagName("head")[0];
+				h.parentNode.insertBefore(l, h);
+				
+				var l = document.createElement("link");
+				l.rel = "stylesheet";
+				l.href = "//fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto:100,400";
+				var h = document.getElementsByTagName("head")[0];
+				h.parentNode.insertBefore(l, h);
+				
+				var l = document.createElement("link");
+				l.rel = "stylesheet";
+				l.href = "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+				var h = document.getElementsByTagName("head")[0];
+				h.parentNode.insertBefore(l, h);
+				
+				var l = document.createElement("link");
+				l.rel = "stylesheet";
+				l.href = "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+				var h = document.getElementsByTagName("head")[0];
+				h.parentNode.insertBefore(l, h);
+			};
+			
+			var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+			if (raf) raf(cb);
+			else window.addEventListener('load', cb);
+			
+			function loadJSResources() {
+				/* Jquery required by Bootstrap. */
+				loadFirst("//code.jquery.com/jquery-3.2.1.min.js", function() {
+					/* Popper required by Bootstrap. */
+					loadFirst("//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js", function() {
+						/* Bootstrap (http://getbootstrap.com/) is a responsive website build framework. */
+						loadFirst("//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js", function() {
+							/* Blazy (https://github.com/dinbror/blazy) is a lazy image loader. */
+							loadFirst("//cdn.jsdelivr.net/blazy/latest/blazy.min.js", function(){ 
+								/* Wow (http://mynameismatthieu.com/WOW/) is used to generates animations when you scroll to specific locations. */
+								loadFirst("//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js", function() {
+									/* Zenscroll (https://zengabor.github.io/zenscroll/) creates smooth animated scrolling on the page to any inline link. */
+									loadFirst("//cdnjs.cloudflare.com/ajax/libs/zenscroll/4.0.0/zenscroll-min.js", function() {
+										/* Main contains all of the javascript calls that might be used across the entire site. */
+										loadFirst("//d3rifeizl63fms.cloudfront.net/ccmstpl/_js/main.min.js", function() {
+											
+											
+											
+										});
+									});
+								});
+							});
+						});
+					});
+				});
+			}
+			
+			<!-- { CCMS_TPL:season-fall.html} -->
+			<!-- { CCMS_TPL:season-winter.html} -->
+			
+			if(window.addEventListener) {
+				window.addEventListener("load", loadJSResources, false);
+			} else if(window.attachEvent) {
+				window.attachEvent("onload", loadJSResources);
+			} else {
+				window.onload = loadJSResources;
+			}
+		</script>
+		
+	</body>
+</html>
